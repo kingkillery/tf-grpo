@@ -1,0 +1,2 @@
+{"id": "w1", "problem": "Using web search and source inspection, determine the title of https://example.com.", "groundtruth": "Example Domain"}
+{"id": "w2", "problem": "Using web search and source inspection, identify which organization manages the reserved example domains described on iana.org.", "groundtruth": "Internet Assigned Numbers Authority"}

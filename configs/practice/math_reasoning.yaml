@@ -1,0 +1,24 @@
+exp_id: math_reasoning
+agent_config: configs/agents/practice/math_agent.yaml
+evaluation_config: configs/eval/math/math_AIME24.yaml
+practice:
+  epochs: 2
+  batch_size: 2
+  grpo_n: 3
+  rollout_concurrency: 4
+  rollout_temperature: 0.7
+  inference_temperature: 0.3
+  max_policy_steps: 8
+  max_response_tokens: 4096
+  max_group_update_ops: 2
+  experience_word_limit: 32
+  reward: exact
+  given_ground_truth: true
+  agent_objective: |
+    input: A math question that could fall into any area of mathematics.
+    output: A step-by-step reasoning process that leads to the final answer.
+  learning_objective: |
+    Help the agent improve mathematical problem solving by extracting concise, reusable guidelines.
+  num_experiences_per_query: 1
+data:
+  practice_dataset_path: examples/toy_math_train.jsonl

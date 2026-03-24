@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "training-free-grpo-repro"
+version = "0.2.0"
+description = "Faithful reference reproduction of Training-Free GRPO"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0",
+  "PyYAML>=6.0.0",
+]
+
+[tool.setuptools]
+packages = ["training_free_grpo"]

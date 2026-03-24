@@ -1,0 +1,2 @@
+{"id": "e1", "problem": "What is 12 * 13? Put the final answer in \\boxed{}.", "groundtruth": "156"}
+{"id": "e2", "problem": "What is the sum of the first 30 positive integers? Put the final answer in \\boxed{}.", "groundtruth": "465"}

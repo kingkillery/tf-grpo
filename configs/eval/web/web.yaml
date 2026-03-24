@@ -1,0 +1,6 @@
+exp_id: web
+agent_config: configs/agents/practice/web_agent.yaml
+dataset_path: examples/toy_web_eval.jsonl
+pass_k: 2
+concurrency: 4
+verify_type: llm

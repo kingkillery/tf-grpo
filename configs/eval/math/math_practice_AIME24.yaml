@@ -1,0 +1,6 @@
+exp_id: math_practice_AIME24
+agent_config: configs/agents/practice/math_reasoning_agent.yaml
+dataset_path: examples/toy_math_eval.jsonl
+pass_k: 4
+concurrency: 8
+verify_type: exact

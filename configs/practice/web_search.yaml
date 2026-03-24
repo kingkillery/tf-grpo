@@ -1,0 +1,24 @@
+exp_id: web_search
+agent_config: configs/agents/practice/web_agent.yaml
+evaluation_config: configs/eval/web/web.yaml
+practice:
+  epochs: 2
+  batch_size: 2
+  grpo_n: 2
+  rollout_concurrency: 4
+  rollout_temperature: 0.7
+  inference_temperature: 0.3
+  max_policy_steps: 8
+  max_response_tokens: 4096
+  max_group_update_ops: 2
+  experience_word_limit: 32
+  reward: llm
+  given_ground_truth: true
+  agent_objective: |
+    input: A web question that requires search and content retrieval.
+    output: A final answer supported by authoritative sources.
+  learning_objective: |
+    Help the agent improve source selection, search strategy, and evidence synthesis.
+  num_experiences_per_query: 2
+data:
+  practice_dataset_path: examples/toy_web_train.jsonl

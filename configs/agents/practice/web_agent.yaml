@@ -1,0 +1,14 @@
+policy: agent
+model_provider:
+  model: gpt-4o-mini
+  base_url: https://api.openai.com/v1
+  api_key_env: OPENAI_API_KEY
+tools:
+  - name: google_search
+    enabled: true
+    params:
+      default_num_results: 5
+  - name: get_content
+    enabled: true
+    params:
+      default_max_chars: 8000

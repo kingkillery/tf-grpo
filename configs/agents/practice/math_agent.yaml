@@ -1,0 +1,10 @@
+policy: agent
+model_provider:
+  model: deepseek-chat
+  base_url: https://api.deepseek.com/v1
+  api_key_env: DEEPSEEK_API_KEY
+tools:
+  - name: python_exec
+    enabled: true
+    params:
+      timeout_seconds: 15.0

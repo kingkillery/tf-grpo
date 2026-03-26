@@ -89,6 +89,10 @@ The Command Center includes:
 - config dependency tracing across practice, eval, and agent YAML files
 - dataset previews for the JSONL inputs behind the selected config
 
+## Harness
+
+Repo-level harness notes live in [HARNESS.md](C:/dev/Desktop-Projects/tf-grpo-upstream/HARNESS.md), with a Claude-specific adapter in [CLAUDE.md](C:/dev/Desktop-Projects/tf-grpo-upstream/CLAUDE.md).
+
 ## What is faithful to the paper / public branch
 
 - The policy stays **frozen** and learns via an external **experience pool**.

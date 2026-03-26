@@ -55,6 +55,40 @@ python scripts/run_training_free_GRPO.py --config_name configs/practice/web_sear
 python scripts/run_eval.py --config_name configs/eval/web/web_practice.yaml
 ```
 
+## Run the market-research workflow
+
+This repo can also practice on a short-horizon market-research task using the
+local `MiroFish` repo as a research tool surface.
+
+```bash
+export OPENAI_API_KEY=...
+python scripts/run_training_free_GRPO.py --config_name configs/practice/web_market_research.yaml
+python scripts/run_eval.py --config_name configs/eval/market/web_market_research.yaml
+```
+
+Notes:
+
+- The included `examples/toy_market_*.jsonl` files are bootstrap examples only.
+- Reward is based on a realized-profit style verifier (`market_pnl`), not an LLM judge.
+- The agent is expected to call the local script `C:\dev\Desktop-Projects\MiroFish\backend\scripts\kalshi_research_packet.py`.
+
+## Command Center
+
+This repo now includes a browser-based operator UI for inspecting configs, launching runs, and reviewing artifacts.
+
+```bash
+pip install -e .
+streamlit run command_center.py
+```
+
+The Command Center includes:
+
+- practice and eval launch controls that call the existing scripts
+- environment readiness checks for model and search API keys
+- run inspection for `runs/<exp_id>` artifacts and step telemetry
+- config dependency tracing across practice, eval, and agent YAML files
+- dataset previews for the JSONL inputs behind the selected config
+
 ## What is faithful to the paper / public branch
 
 - The policy stays **frozen** and learns via an external **experience pool**.

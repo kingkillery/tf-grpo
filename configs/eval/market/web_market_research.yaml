@@ -1,0 +1,6 @@
+exp_id: web_market_research_eval
+agent_config: configs/agents/practice/market_agent.yaml
+dataset_path: examples/toy_market_eval.jsonl
+pass_k: 1
+concurrency: 2
+verify_type: market_pnl

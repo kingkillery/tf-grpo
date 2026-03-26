@@ -1,0 +1,24 @@
+exp_id: web_market_research
+agent_config: configs/agents/practice/market_agent.yaml
+evaluation_config: configs/eval/market/web_market_research.yaml
+practice:
+  epochs: 2
+  batch_size: 2
+  grpo_n: 2
+  rollout_concurrency: 2
+  rollout_temperature: 0.7
+  inference_temperature: 0.2
+  max_policy_steps: 4
+  max_response_tokens: 3072
+  max_group_update_ops: 2
+  experience_word_limit: 40
+  reward: market_pnl
+  given_ground_truth: true
+  agent_objective: |
+    input: A historical prediction market snapshot with ticker, question, and YES price.
+    output: A JSON trading decision using local MiroFish research evidence.
+  learning_objective: |
+    Help the agent improve reference-market selection, pattern interpretation, and disciplined HOLD behavior.
+  num_experiences_per_query: 2
+data:
+  practice_dataset_path: examples/toy_market_train.jsonl

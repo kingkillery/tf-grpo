@@ -68,7 +68,15 @@ python scripts/run_eval.py --config_name configs/eval/market/web_market_research
 
 Notes:
 
-- The included `examples/toy_market_*.jsonl` files are bootstrap examples only.
+- The default market workflow now points at `examples/kalshi_market_corpus.jsonl`, exported from the local `MiroFish` repo.
+- Refresh that corpus with:
+
+```bash
+cd C:\dev\Desktop-Projects\MiroFish
+npm run kalshi:export-corpus -- --ticker KXHIGHNY-26MAR15-T47 --ticker KXHIGHNY-26MAR15-B47.5 --ticker KXHIGHNY-26MAR15-B49.5 --ticker KXHIGHNY-26MAR15-B51.5 --ticker KXHIGHNY-26MAR15-B53.5 --ticker KXHIGHNY-26MAR15-T54 --snapshot-hours-before-expiry 24 --period-minutes 60 --output-jsonl C:\dev\Desktop-Projects\tf-grpo-upstream\examples\kalshi_market_corpus.jsonl
+```
+
+- The current corpus is a small bootstrap dataset, so practice and eval reuse the same rows until a larger holdout split is exported.
 - Reward is based on a realized-profit style verifier (`market_pnl`), not an LLM judge.
 - The agent is expected to call the local script `C:\dev\Desktop-Projects\MiroFish\backend\scripts\kalshi_research_packet.py`.
 

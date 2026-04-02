@@ -21,4 +21,4 @@ practice:
     Help the agent improve reference-market selection, pattern interpretation, and disciplined HOLD behavior.
   num_experiences_per_query: 2
 data:
-  practice_dataset_path: examples/toy_market_train.jsonl
+  practice_dataset_path: examples/kalshi_market_corpus.jsonl

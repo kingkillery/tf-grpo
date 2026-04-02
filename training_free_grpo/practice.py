@@ -324,7 +324,7 @@ class PracticeRunner:
         return summaries, critiques, group_update_records, normalized
 
     def _verify(self, sample: dict[str, Any], rollout: Rollout) -> VerificationResult:
-        payload = {"problem": sample["problem"], "groundtruth": sample.get("groundtruth"), "response": rollout.response}
+        payload = {**sample, "response": rollout.response}
         if self.cfg.practice.reward == "llm":
             return verify_web_llm(payload, self.judge_llm)
         return self.verify(payload, self.judge_llm)

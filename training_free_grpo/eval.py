@@ -49,7 +49,7 @@ class EvalRunner:
             scores = []
             for _ in range(self.cfg.pass_k):
                 rollout = self.policy.rollout(prompt, sample["problem"], temperature=0.3, max_tokens=4096, max_steps=8)
-                payload = {"problem": sample["problem"], "groundtruth": sample.get("groundtruth"), "response": rollout.response}
+                payload = {**sample, "response": rollout.response}
                 if self.cfg.verify_type == "llm":
                     verdict = verify_web_llm(payload, self.judge_llm)
                 else:
